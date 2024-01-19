@@ -15,7 +15,7 @@
 /* Your own custom utilities */
 
 .bg-image {
-  background-image: url('https://alergpentrunima.ro/wp-content/uploads/2024/01/alergareapuseni.gif');
+  background-image: url('https://api.alergpentrunima.ro/wp-content/uploads/2024/01/alergareapuseni.gif');
   filter: blur(8px);
   -webkit-filter: blur(5px);
   height: 100%;
