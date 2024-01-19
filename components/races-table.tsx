@@ -71,7 +71,7 @@ export default function RacesTable() {
                   {race.date}
                 </TableCell>
                 <TableCell align="right" >
-                    <a href={race.link} className="underline hover:text-success duration-200 transition-colors">{race.name}</a>
+                    <a href={race.link} target="_blank" className="underline hover:text-success duration-200 transition-colors">{race.name}</a>
                     </TableCell>
                 <TableCell align="right">{race.distance}</TableCell>
                 <TableCell align="right">{race.elevationGain}</TableCell>
