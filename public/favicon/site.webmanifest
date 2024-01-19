@@ -1,0 +1,19 @@
+{
+  "name": "Alerg pentru Nima",
+  "short_name": "apn.ro",
+  "icons": [
+    {
+      "src": "/favicons/favicon-32x32.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-32x32.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone"
+}
