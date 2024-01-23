@@ -1,4 +1,3 @@
-import { CMS_NAME, CMS_URL } from '../lib/constants'
 import {BrowserView, MobileView} from 'react-device-detect';
 
 export default function Intro({donors}) {
