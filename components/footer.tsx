@@ -1,5 +1,4 @@
 import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function Footer() {
