@@ -14,6 +14,10 @@
 
 /* Your own custom utilities */
 
+#__next {
+  background-color: rgba(211, 0, 255, 0.3)
+}
+
 .bg-image {
   background-image: url('https://api.alergpentrunima.ro/wp-content/uploads/2024/01/alergareapuseni.gif');
   filter: blur(8px);

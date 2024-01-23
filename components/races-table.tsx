@@ -46,7 +46,7 @@ export default function RacesTable() {
 
     return (
         <section className="flex-col flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-          <h1 className='text-4xl font-semibold mb-4 pt-4 pb-4'>Calendar competiții 2024</h1>
+          <h1 className='text-4xl text-white font-semibold mb-4 pt-4 pb-4'>Calendar competiții 2024</h1>
         <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
