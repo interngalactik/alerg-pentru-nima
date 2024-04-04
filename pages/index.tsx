@@ -9,6 +9,7 @@ import Counters from '../components/counters'
 import Header from '../components/header'
 import RacesTable from '../components/races-table'
 import AboutCampaign from '../components/aboutCampaign'
+import AboutMe from '../components/aboutMe'
 import { getAllPostsForHome } from '../lib/api'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -63,6 +64,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         <Intro donors={donors} /> 
         <Counters donors={donors} />
         <AboutCampaign />
+        <AboutMe />
         <RacesTable />
         {/* {heroPost && (
           <HeroPost
