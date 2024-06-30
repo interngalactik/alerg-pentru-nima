@@ -13,6 +13,7 @@ import AboutMe from '../components/aboutMe'
 import { getAllPostsForHome } from '../lib/api'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Sponsors from '../components/sponsors'
 
 export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
@@ -66,6 +67,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         <AboutCampaign />
         <AboutMe />
         <RacesTable />
+        <Sponsors />
         {/* {heroPost && (
           <HeroPost
             title={heroPost.title}
