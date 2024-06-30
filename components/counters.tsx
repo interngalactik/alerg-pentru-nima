@@ -9,6 +9,7 @@ export default function Counters({ donors }) {
     
 const [ isLoading, setIsLoading ] = useState(true);
 const [ activities, setActivities ] = useState([]);
+const [ runs, setRuns ] = useState([]);
 
 useEffect(() => {
     fetch(STRAVA_CALL_REFRESH, {
@@ -19,25 +20,58 @@ useEffect(() => {
 }, [STRAVA_CALL_REFRESH])
 
   // use current access token to call all activities
-  function getActivities(access){
-    // console.log(callActivities + access)
-      fetch(STRAVA_CALL_ACTIVITIES + access)
-      .then(res => res.json())
-      .then(data => {
-        const runs = data.filter(activity => {
-            return activity.type === 'Run'
+  // function getActivities(access){
+  //   // console.log(callActivities + access)
+  //     fetch(STRAVA_CALL_ACTIVITIES + access)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       const runs = data.filter(activity => {
+  //           return activity.type === 'Run'
+  //       });
+  //       setActivities(runs);
+  //       setIsLoading(prev => !prev);
+  //   })
+  //     .catch(e => console.log(e))
+  // }
+
+  function getActivities(access) {
+    const endpoints = [`${STRAVA_CALL_ACTIVITIES + access + `&page=1`}`,`${STRAVA_CALL_ACTIVITIES + access + `&page=2`}`]
+    const fetchPromises = endpoints.map(endpoint => fetch(endpoint))
+    Promise.all(fetchPromises)
+    .then(responses => Promise.all(responses.map(res => res.json())))
+//     .then(allActivities => {
+//       console.log('All ACTIVITIES', allActivities)
+//       const ALL_ACTIVITIES = [].concat(allActivities[0], allActivities[1])
+//       console.log('ALLL ACTIVITIEEEES', ALL_ACTIVITIES)
+//       allActivities.forEach((activityArray) => {
+//         console.log('activityArray', activityArray)
+//         const runs = activityArray.filter(activity => {
+//           return activity.type === 'Run'
+//     });
+//     console.log('runs', runs)
+//     setRuns([...runs]);
+//     setIsLoading(prev => !prev);
+//   });
+// })
+    .then(allActivities => {
+      let ALL_ACTIVITIES = [];
+      allActivities.forEach((activityArray) => {
+        ALL_ACTIVITIES = ALL_ACTIVITIES.concat(activityArray)
+      })
+      const runs = ALL_ACTIVITIES.filter(activity => {
+          return activity.type === 'Run'
         });
-        setActivities(runs);
-        setIsLoading(prev => !prev);
+        setRuns([...runs])
+        setIsLoading(prev => !prev)
     })
-      .catch(e => console.log(e))
+.catch(e => console.log(e))
   }
 
-  function showActivities(){
+  function showRuns(){
     if(isLoading) return <>LOADING</>
     if(!isLoading) {
       console.log(  )
-      return activities.length
+      return runs.length
     }
   }
 
@@ -45,7 +79,7 @@ useEffect(() => {
     if(isLoading) return <>LOADING</>
     if(!isLoading) {
       console.log(  )
-      const totalDistanceMeters = activities.reduce((accumulator, run) => {
+      const totalDistanceMeters = runs.reduce((accumulator, run) => {
         return accumulator + run.distance
       }, 0)
 
