@@ -15,7 +15,7 @@ export default function AboutMe() {
         În 2020, în timpul pandemiei, mi-am făcut propriul traseu de ultramaraton, de la Sighișoara la Brăduleț, traversând munții Făgăraș și am pornit o campanie de strângeri 
         de fonduri pentru Sanctuarul Nima. Am alergat 140km în două etape din cauza unei accidentări, la cea de-a doua alergare alăturându-mi-se Diana Bejan, 
         și împreună am strâns peste 13 000 de lei, reprezentând o parte din banii pentru una din pășunile sanctuarului.
-
+        <br /> <br />
         Cu această nouă campanie pe care am pornit-o mi-am propus să ajut Sanctuarul Nima să strângă cele 5000 de SMS-uri de care ar avea nevoie lunar pentru hrană, alergând
         câte 1km în schimbul fiecărui mesaj trimis.
     </p>
